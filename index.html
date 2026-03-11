@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClintonAzabuike-Creator | Merchant Card</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        :root { --gold: #D4AF37; --bg: #000; --glass: rgba(255, 255, 255, 0.05); }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        
+        .card { 
+            width: 320px; height: 480px; background: var(--glass); border: 1px solid rgba(212, 175, 55, 0.3); 
+            border-radius: 24px; backdrop-filter: blur(15px); padding: 40px 20px; text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5); position: relative;
+        }
+
+        .card::before { content: ""; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; border-radius: 24px; background: linear-gradient(45deg, transparent, var(--gold), transparent); z-index: -1; opacity: 0.3; }
+
+        .profile-title { font-weight: 900; letter-spacing: 4px; color: var(--gold); margin-bottom: 5px; }
+        .sub-text { font-size: 10px; opacity: 0.5; text-transform: uppercase; margin-bottom: 30px; }
+
+        #qr-container { background: #fff; padding: 15px; border-radius: 15px; width: fit-content; margin: 0 auto 30px auto; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+
+        .btn-connect { background: var(--gold); color: #000; border: none; padding: 12px 25px; border-radius: 30px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-connect:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--gold); }
+
+        .footer-tag { position: absolute; bottom: 20px; width: 100%; left: 0; font-size: 9px; opacity: 0.3; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="profile-title">CLINTON AZABUIKE</div>
+    <div class="sub-text">Decentralized Systems Architect</div>
+
+    <div id="qr-container"></div>
+
+    <p style="font-size: 13px; opacity: 0.8; margin-bottom: 25px;">
+        Scan to enter my <br><strong>Serverless P2P Market</strong>
+    </p>
+
+    <a href="https://clintonazabuike-creator.github.io/p2p-market/" class="btn-connect">VIEW PROTOCOL</a>
+
+    <div class="footer-tag">SECURED BY CLINTONAZABUIKE-CREATOR</div>
+</div>
+
+<script>
+    // Point this to your P2P Market URL
+    const targetLink = "https://clintonazabuike-creator.github.io/p2p-market/";
+    new QRCode(document.getElementById('qr-container'), {
+        text: targetLink,
+        width: 180,
+        height: 180,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+</script>
+
+</body>
+</html>
